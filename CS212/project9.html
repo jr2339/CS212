@@ -1,0 +1,115 @@
+<html>
+<head>
+
+<title>E-mail Again</title> 
+
+<link type="text/css" rel = "stylesheet" href="stylesheet.css"/>
+	<style type ="text/css">
+        <!--
+            form {margin: 1.0em 0 0 0; padding: 0;}
+            .field {padding-top: .6em}
+            label {font-weight: bold; float: left; width: 20%;
+                   margin-right: 1em; text-align: right;}
+            #submit {margin-left: 35%; padding-top: 1em;}
+        -->
+        </style>
+</head>
+<body>
+	<body style = "background-color:#5CCE35;" style = "text-align:center;">
+
+	
+ 	<div id="PageContainer">
+ 	
+ 	<div id="navbar">
+ 	<ul>
+ 		<li><a href="homepage.html">Home</a></li>
+		<li><a href="project6.php">NEW E-mail</a></li>
+		<li><a href="resume.html">Resume</a></li>
+	</ul>
+	</div>
+	
+	<a id="top"></a>
+	
+	<div id="header">
+	<h2>CS212 Project#9 E-mail Again</h2>
+	</div>
+	
+	<div id ="leftSideBar">
+	<h2>Project Links</h2>
+	<ul>
+		<li><a href="http://www.cefns.nau.edu/~jr2339/project1.html">CS212 Project #1</a>
+		<li><a href="http://www.cefns.nau.edu/~jr2339/project2.html">CS212 Project #2</a>
+		<li><a href="http://www.cefns.nau.edu/~jr2339/project3.html">CS212 Project #3</a>
+		<li><a href="http://www.cefns.nau.edu/~jr2339/project6.php">CS212 Project #6</a>
+	</ul>
+	</div>
+	
+	</div>
+	
+	<div id="mainContent">
+	<h3>Please fill out the form below and click sumbit to send an email</h3>
+
+
+<script>
+//a set of four functions that do the actual form field validation
+function validate(form)
+{
+fail = validateUsername(form.username.value) 
+fail += validateEmail(form.email.value) 
+fail += validateSubject(form.subject.value) 
+fail += validateMessage(form.message.value) 
+
+if (fail == "") return true
+else { alert(fail); return false }
+}
+
+function validateUsername(field)
+{
+	
+	 if (field == "") { window.alert("No Username entered.\n");}   // if we don't filled out the name 
+}
+
+function validationEmail(field)
+{
+	if(field == "") { window.alert("No Email entered.\n");}       // if we don't filled out the e-mail
+}
+
+function validationSubject(field)
+{
+	if(field == "") { window.alert("No Subject entered.\n");}     // if we don't fill out the subject
+}
+
+function validationMessage(field)
+{
+	if(field == "") { window.alert("No Message entered.\n");}     // if we don't fill out the message
+} 
+
+
+ </script>
+ </head>
+ 
+ <body>
+<table  cellspacing="15" >
+<th colspan="2" align="center"></th> 
+<form method="post" action="project9.php" onSubmit="return validate(this)">
+  <tr><td>Username</td>
+ 	<td><input type="text" name="username" onblur='validateUsername(this.value)'/></td> </tr>
+  <tr><td>Email</td>
+ 	<td><input type="text" name="email" onblur='validateEmail(this.value)'/></td></tr>
+ <tr><td>Subject</td>
+ 	<td><input type="text" name="subject" onblur='validateSubject(this.value)'/></td> </tr>
+ <tr><td>Message</td>
+ 	<td><input type="text" name="content" onblur='validateMessage(this.value)'/></td></tr>
+<tr><td>Nature</td>
+ 	 <td><select  name='messageNature'>
+ 	     <option value='Question'>Question</option>
+ 	     <option value='Comment'>Comment</option>
+ 	     <option value='Urgent'>Urgent</option>
+ 	      </select></td></tr>
+ <tr><td>Response</td>	
+  <td><input type='checkbox' id='responserequired' name='responserequired' value='yes'>Yes,Please</td></tr>    
+   <tr><td colspan="2" align="center"><input type="submit" value="Submit" /></td> </tr>
+ </form>
+ </table>
+ </body>
+ </html>
